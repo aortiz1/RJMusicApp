@@ -5,5 +5,6 @@
     [GenreId] INT NULL, 
     CONSTRAINT [FK_Artist_Genre_Artist] FOREIGN KEY ([ArtistId]) REFERENCES [Artist]([Id]), 
     CONSTRAINT [FK_Artist_Genre_Genre] FOREIGN KEY ([GenreId]) REFERENCES [Genre]([Id]),
+	 CONSTRAINT [PK_Artist_Genre] PRIMARY KEY CLUSTERED ([Id] ASC)
 
 )

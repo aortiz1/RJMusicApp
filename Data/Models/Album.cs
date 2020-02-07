@@ -1,12 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Data.Models
 {
-    public class Album
+    public partial class Album
     {
+        public Album()
+        {
+            AlbumArtist = new HashSet<AlbumArtist>();
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
+        public int? Year { get; set; }
+        public int? LabelId { get; set; }
+
+        public ICollection<AlbumArtist> AlbumArtist { get; set; }
     }
 }

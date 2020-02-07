@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleRJS", "ExampleRJS\ExampleRJS.csproj", "{E8260817-E190-4008-B79C-7406215AC168}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppReact", "AppReact\AppReact.csproj", "{BDFF4604-AB11-4808-B2FF-E03A8ACB31FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppReact", "AppReact\AppReact.csproj", "{BDFF4604-AB11-4808-B2FF-E03A8ACB31FF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{098DBC2B-1474-489E-8F09-28AAA1C1E561}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{098DBC2B-1474-489E-8F09-28AAA1C1E561}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MusicDatabase", "MusicDatabase\MusicDatabase.sqlproj", "{30F8BF31-07DE-4064-9B8F-F1594B24DA21}"
 EndProject
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E8260817-E190-4008-B79C-7406215AC168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8260817-E190-4008-B79C-7406215AC168}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8260817-E190-4008-B79C-7406215AC168}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E8260817-E190-4008-B79C-7406215AC168}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BDFF4604-AB11-4808-B2FF-E03A8ACB31FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BDFF4604-AB11-4808-B2FF-E03A8ACB31FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDFF4604-AB11-4808-B2FF-E03A8ACB31FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
