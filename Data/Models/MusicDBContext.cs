@@ -26,7 +26,7 @@ namespace Data.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=scm-ws044;Database=MusicDB;user id=devlocal;password=@Dev.Scio.19;");
+                //optionsBuilder.UseSqlServer("Server=scm-ws044;Database=MusicDB;user id=devlocal;password=@Dev.Scio.19;");
             }
         }
 
