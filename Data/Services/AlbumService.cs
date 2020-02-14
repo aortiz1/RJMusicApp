@@ -16,7 +16,7 @@ namespace Data.Services
             _musicDBContext = musicDBContext;
         }
 
-
+      
         public List<Album> GetAllAlbums()
         {
             return _musicDBContext.Album.ToList();
