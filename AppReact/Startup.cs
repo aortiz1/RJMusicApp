@@ -28,6 +28,7 @@ namespace AppReact
 
             services.AddMvc();
             services.AddTransient<AlbumService>();
+            services.AddTransient<DummyGeneratorService>();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

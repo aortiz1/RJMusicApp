@@ -8,6 +8,7 @@ namespace Data.Models
         public Album()
         {
             AlbumArtist = new HashSet<AlbumArtist>();
+            
         }
 
         public int Id { get; set; }
@@ -16,5 +17,6 @@ namespace Data.Models
         public int? LabelId { get; set; }
 
         public ICollection<AlbumArtist> AlbumArtist { get; set; }
+        public Label Label { get; set; }
     }
 }

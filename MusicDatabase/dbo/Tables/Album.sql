@@ -3,7 +3,8 @@
     [Name] VARCHAR (250) NULL, 
     [Year] INT NULL, 
     [LabelId] INT NULL, 
-    CONSTRAINT [PK_Album] PRIMARY KEY CLUSTERED ([Id] ASC)
+    CONSTRAINT [PK_Album] PRIMARY KEY CLUSTERED ([Id] ASC), 
+    CONSTRAINT [FK_Album_Label] FOREIGN KEY ([LabelId]) REFERENCES [Label]([Id])
 
 );
 

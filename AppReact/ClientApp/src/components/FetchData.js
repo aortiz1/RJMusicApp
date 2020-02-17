@@ -1,26 +1,55 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { getAlbumRequest, generateMock } from '../services/dataService';
 
 export class FetchData extends Component {
   displayName = FetchData.name
 
   constructor(props) {
-    super(props);
-    this.state = { forecasts: [], albums:[], loading: true, loadingAlbum:true };
+      super(props);
+      this.state = { forecasts: [], albums: [], loading: true, loadingAlbum: true, createData: false };
+      this.otherFunction = this.otherFunction.bind(this);
+      this.callGenerator = this.callGenerator.bind(this);
 
       //  fetch('api/SampleData/WeatherForecasts')
       axios.get('api/SampleData/WeatherForecasts')
+   
      // .then(response => response.json())
           .then(data => {
              
               this.setState({ forecasts: data.data, loading: false });
           });
-      axios.get('api/Album/getAlbums')
+      //axios.get('api/Album/getAlbums')
+      getAlbumRequest()
           .then(data => {
               console.log("got data", data);
               this.setState({ albums: data.data, loadingAlbum: false });
           });
-  }
+    }
+
+    callGenerator() {
+        console.log("click");
+
+
+        generateMock()
+            .then(data => {
+                this.setState({ createData: true });
+            });
+    }
+
+    otherFunction() {
+        console.log("click");
+    }
+
+    static renderCreateData() {
+        let message = this.createData ? 'data generated' : 'ready';
+        return (
+            <div><br/>
+              
+                <label>{message}</label>
+                <br /></div>
+        )
+    }
 
   static renderForecastsTable(forecasts) {
     return (
@@ -56,13 +85,11 @@ export class FetchData extends Component {
                         <th>Release year</th>
                     </tr>
                 </thead>
-                <tbody> {albums.map(album =>
-                    <tr key={album.id}>
-                        <td>{album.name}</td>
-                        <td>{album.year}</td>
-                    </tr>)}
+                <tbody>{albums.map(album =>
+                    <tr key={album.id}><td>{album.name}</td>
+                        <td>{album.year}</td></tr>
+                )}
                 </tbody>
-
             </table>
         );
     }
@@ -74,12 +101,14 @@ export class FetchData extends Component {
           : FetchData.renderForecastsTable(this.state.forecasts);
       let albumData = this.state.loadingAlbum ? <p><em>Loading...</em></p>
           : FetchData.renderAlbums(this.state.albums);
+      let createMockRender = FetchData.renderCreateData();
     return (
       <div>
         <h1>Weather forecast</h1>
         <p>This component demonstrates fetching data from the server.</p>
-            {contents}
             {albumData}
+            {createMockRender}
+            <button onClick={this.callGenerator}>Create Data</button>
       </div>
     );
   }

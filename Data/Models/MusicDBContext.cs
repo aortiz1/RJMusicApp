@@ -89,6 +89,8 @@ namespace Data.Models
                     .HasMaxLength(250)
                     .IsUnicode(false);
             });
+
+          
         }
     }
 }

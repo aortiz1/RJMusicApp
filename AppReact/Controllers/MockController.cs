@@ -10,42 +10,34 @@ namespace AppReact.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AlbumController : ControllerBase
+    public class MockController : ControllerBase
     {
-        private AlbumService _albumService;
         private DummyGeneratorService _dummyGeneratorService;
 
-        public AlbumController(AlbumService albumService, DummyGeneratorService dummyGeneratorService)
+        public MockController(DummyGeneratorService dummyGeneratorService)
         {
-            _albumService = albumService;
             _dummyGeneratorService = dummyGeneratorService;
         }
 
         [HttpGet]
-        [Route("getAlbums")]
-        public IActionResult GetAlbums()
-        {
-            var albums = _albumService.GetAllAlbums();
-
-            return Ok(albums);
-        }
-        [HttpGet]
-        [Route("generateData/{totalData}")]
-        public IActionResult GenerateData(int totalData)
+        [Route("generateData")]
+        public IActionResult GenerateData()
         {
             try
             {
+                int totalData = 10;
                 _dummyGeneratorService.GenerateLabelRandom(totalData);
                 _dummyGeneratorService.GeneratArtistRandom(totalData);
                 _dummyGeneratorService.GenerateAlbumRandom(totalData);
 
                 return Ok(true);
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 return Ok(false);
             }
-
+           
         }
+
     }
 }

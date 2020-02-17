@@ -68,4 +68,7 @@
     <Build Include="dbo\Tables\Album_Artist.sql" />
     <Build Include="dbo\Tables\Artist_Genre.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Seed1.sql" />
+  </ItemGroup>
 </Project>
