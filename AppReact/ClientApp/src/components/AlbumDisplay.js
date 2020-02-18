@@ -10,11 +10,7 @@ export class AlbumDisplay extends Component {
 
     }
 
-    incrementCounter() {
-        this.setState({
-            currentCount: this.state.currentCount + 1
-        });
-    }
+  
 
     render() {
         return (

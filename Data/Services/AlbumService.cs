@@ -22,10 +22,6 @@ namespace Data.Services
       
         public List<AlbumDTO> GetAllAlbums()
         {
-            //var albums= _musicDBContext.Album.Include(a=> a.AlbumArtist).Include("AlbumArtist.Artist").ToList();
-            //var genres = albums.SelectMany(album => album.AlbumArtist.Select(x => x.Artist.ArtistGenre.Select(a => a.Genre.Name)));
-            //var artists = albums.SelectMany(album => album.AlbumArtist.Select(a=> a.Album.Name));
-            //return null;
             return _musicDBContext.Album.Select(this.SelectorAlbum()).ToList();
         }
 

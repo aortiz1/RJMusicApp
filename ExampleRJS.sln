@@ -9,6 +9,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MusicDatabase", "MusicDatab
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{C2584091-C14D-40AA-92A0-F26E282431D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSExample2", "RSExample2\RSExample2.csproj", "{F440404C-11A3-4F93-B9DB-D4D1E0C08FA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{C2584091-C14D-40AA-92A0-F26E282431D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2584091-C14D-40AA-92A0-F26E282431D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2584091-C14D-40AA-92A0-F26E282431D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F440404C-11A3-4F93-B9DB-D4D1E0C08FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F440404C-11A3-4F93-B9DB-D4D1E0C08FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F440404C-11A3-4F93-B9DB-D4D1E0C08FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F440404C-11A3-4F93-B9DB-D4D1E0C08FA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
