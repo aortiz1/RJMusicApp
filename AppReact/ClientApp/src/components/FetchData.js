@@ -28,12 +28,17 @@ export class FetchData extends Component {
     }
 
     callGenerator() {
-        console.log("click");
+      //  console.log("click");
 
 
         generateMock()
             .then(data => {
-                this.setState({ createData: true });
+                getAlbumRequest()
+                    .then(data => {
+                        console.log("got data", data);
+                        this.setState({ albums: data.data, loadingAlbum: false, createData:true });
+                    });
+
             });
     }
 
@@ -83,11 +88,16 @@ export class FetchData extends Component {
                     <tr>
                         <th>Name of the album</th>
                         <th>Release year</th>
+                        <th>Artist</th>
+                        <th>Genre</th>
                     </tr>
                 </thead>
                 <tbody>{albums.map(album =>
                     <tr key={album.id}><td>{album.name}</td>
-                        <td>{album.year}</td></tr>
+                        <td>{album.year}</td>
+                        <td>{album.artists}</td>
+                        <td>{album.genres}</td>
+                    </tr>
                 )}
                 </tbody>
             </table>
