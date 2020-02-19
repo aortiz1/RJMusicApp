@@ -34,7 +34,8 @@ namespace Data.Services
                 Year = album.Year.GetValueOrDefault(),
                 Label = album.Label.Name,
                 Genres = string.Join(",", album.AlbumArtist.SelectMany(x => x.Artist.ArtistGenre.Select(a => a.Genre.Name))),
-                Artists = string.Join(",", album.AlbumArtist.Select(x => x.Artist.Name))
+                Artists = string.Join(",", album.AlbumArtist.Select(x => x.Artist.Name)),
+                Cover = "cd_1.png"
             };
         }
     }

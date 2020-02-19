@@ -3,6 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { actionCreators } from '../store/Album';
+import AlbumRow from './AlbumRow';
+
 
 class AlbumList extends Component {
 
@@ -23,7 +25,8 @@ class AlbumList extends Component {
         return (
             <div>
                 <h1>Albums</h1>
-                {renderAlbums(this.props)}
+                {renderGrid(this.props)}
+              
             </div>
         );
     }
@@ -51,6 +54,57 @@ function renderAlbums(props) {
         </table>
     );
     
+}
+
+function renderGrid(props) {
+    if (props.albums.length === 0) {
+        return null;
+    }
+    let grid = createGrid(props.albums);
+    return (
+        <div className="container">
+            {grid.map((row, index) =>
+                <AlbumRow rowNumber={row.rowNumber}
+                    cols={row.cols} 
+                >
+                </AlbumRow>
+
+                )}
+        </div>
+        );
+}
+
+function createGrid(albums) {
+    var totalCols = 3;
+    var gridList = [];
+    for (var i = 0; i < albums.length; i += totalCols) {
+        var row = {
+            rowNumber: i,
+            cols: []
+        };
+        for (var j = i; j < i + totalCols; j++) {
+            if (j < albums.length) {
+                row.cols.push(albums[j]);  
+            }
+        }
+        gridList.push(row);
+    }
+    return gridList;
+}
+function gridDummy() {
+    return (<div className="container">
+        <div className="row">
+            <div className="col-sm">
+                One of three columns
+    </div>
+            <div className="col-sm">
+                One of three columns
+    </div>
+            <div className="col-sm">
+                One of three columns
+    </div>
+        </div>
+    </div>);
 }
 
 export default connect(
