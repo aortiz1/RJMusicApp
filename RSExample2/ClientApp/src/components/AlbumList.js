@@ -66,6 +66,7 @@ function renderGrid(props) {
             {grid.map((row, index) =>
                 <AlbumRow rowNumber={row.rowNumber}
                     cols={row.cols} 
+                    key={row.rowNumber}
                 >
                 </AlbumRow>
 
@@ -77,34 +78,22 @@ function renderGrid(props) {
 function createGrid(albums) {
     var totalCols = 3;
     var gridList = [];
+   
     for (var i = 0; i < albums.length; i += totalCols) {
+        var date = new Date();
         var row = {
-            rowNumber: i,
+            rowNumber: date.getMilliseconds().toString()+i,
             cols: []
         };
         for (var j = i; j < i + totalCols; j++) {
             if (j < albums.length) {
+                albums[j].key = albums[j].id.toString();
                 row.cols.push(albums[j]);  
             }
         }
         gridList.push(row);
     }
     return gridList;
-}
-function gridDummy() {
-    return (<div className="container">
-        <div className="row">
-            <div className="col-sm">
-                One of three columns
-    </div>
-            <div className="col-sm">
-                One of three columns
-    </div>
-            <div className="col-sm">
-                One of three columns
-    </div>
-        </div>
-    </div>);
 }
 
 export default connect(
