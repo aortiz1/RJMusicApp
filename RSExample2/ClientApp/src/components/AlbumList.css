@@ -1,0 +1,13 @@
+﻿body {
+}
+
+.div1 div img {
+    width: 100%;
+    display: block;
+    float: left;
+}
+
+.imgSmall{
+    height:100%;
+    width:160px;
+}

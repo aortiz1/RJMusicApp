@@ -13,5 +13,6 @@ namespace Data.Models.Dtos
         public string Artists { get; set; }
         public string Genres { get; set; }
         public string Cover { get; set; }
+        public double Price { get; set; }
     }
 }

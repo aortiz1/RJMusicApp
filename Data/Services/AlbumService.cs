@@ -12,11 +12,13 @@ namespace Data.Services
     public class AlbumService
     {
         public MusicDBContext _musicDBContext;
+        private Random rdn;
 
         public AlbumService(
             MusicDBContext musicDBContext)
         {
             _musicDBContext = musicDBContext;
+            rdn = new Random();
         }
 
       
@@ -35,7 +37,8 @@ namespace Data.Services
                 Label = album.Label.Name,
                 Genres = string.Join(",", album.AlbumArtist.SelectMany(x => x.Artist.ArtistGenre.Select(a => a.Genre.Name))),
                 Artists = string.Join(",", album.AlbumArtist.Select(x => x.Artist.Name)),
-                Cover = "cd_1.png"
+                Cover = "cd_1.png",
+                Price= rdn.NextDouble()
             };
         }
     }

@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { actionCreators } from '../store/Album';
 import AlbumRow from './AlbumRow';
+import imageCd from '../assets/cd_1.png';
 
+import './AlbumList.css';
 
 class AlbumList extends Component {
 
@@ -14,7 +16,7 @@ class AlbumList extends Component {
     }
 
     componentDidUpdate() {
-        this.ensureDataFetched();
+    //    this.ensureDataFetched();
     }
 
     ensureDataFetched() {
@@ -25,7 +27,10 @@ class AlbumList extends Component {
         return (
             <div>
                 <h1>Albums</h1>
+                <br />
                 {renderGrid(this.props)}
+                <br/>
+                text
               
             </div>
         );
